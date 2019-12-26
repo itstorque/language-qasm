@@ -64,11 +64,21 @@ patterns: [
     match: '".*"'
   }
   {
+    name: 'storage.type'
+    comment: 'QASM classes'
+    match: '^ *(?:(qreg|creg)|'+
+                '(gate) )'
+  }
+  {
+    name: 'storage.modifier'
+    comment: 'QASM types'
+    match: '\\b(?:(unmaj|majority)|'+
+                '(post) )\\b'
+  }
+  {
     name: 'support.function'
     comment: 'cQASM instructions'
-    match: '^ *(?:(qreg|creg)|'+
-                  '(prep_x|prep_y|prep_z)|'+
-                  '(error_model)|'+
+    match: '^ *(?:(prep_x|prep_y|prep_z|error_model)|'+
                   '(measure_x|measure_y|measure_z|measure_all|measure_parity|measure)|'+
                   '(display|display_binary) )'
   }
@@ -99,7 +109,7 @@ patterns: [
   {
     name: 'keyword.control'
     comment: 'classical gates'
-    match: '(?i)^ *(?:(not) )'
+    match: '(?i)^ *(?:(not )|(if(?=[( ])))'
   }
   {
     name: 'variable.language'
