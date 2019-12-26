@@ -29,6 +29,11 @@ patterns: [
             '''
   }
   {
+    name: 'support.class'
+    comment: 'QASM control instructions'
+    match: '(?x)\\b(include|OPENQASM)\\b'
+  }
+  {
     name: 'variable.language'
     comment: 'qubit'
     match: '(?x)\\b(qubit|qubits|map)\\b'
@@ -56,8 +61,9 @@ patterns: [
   {
     name: 'support.function'
     comment: 'cQASM instructions'
-    match: '^ *(?:(depolarizing_channel|load_state)|
+    match: '^ *(?:(qreg|creg)|
                   (prep_x|prep_y|prep_z)|
+                  (depolarizing_channel|load_state)|
                   (measure|measure_x|measure_y|measure_z|measure_all|measure_parity)|
                   (display|display_binary) )'
   }
