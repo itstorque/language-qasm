@@ -1,6 +1,6 @@
 {
   "name": "language-qasm",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A QASM syntax highlighter for Atom.",
   "keywords": [
     "language",
