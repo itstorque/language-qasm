@@ -9,6 +9,11 @@ limitLineLength: true
 patterns: [
   {
     comment: 'Use this to explain your code'
+    name: 'comment.line.double-slash'
+    match: '\\/\\/.*$'
+  }
+  {
+    comment: 'Use this to explain your code'
     name: 'comment.line.number-sign'
     match: '#.*$'
   }
