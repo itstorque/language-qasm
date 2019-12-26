@@ -1,0 +1,20 @@
+scopeName: 'source.qasm'
+name: 'QASM'
+
+fileTypes: [
+  'qasm'
+]
+limitLineLength: true
+
+patterns: [
+  {
+    comment: 'Use this to explain your code'
+    name: 'comment'
+    match: '#.*$'
+  }
+  {
+    name: 'constant'
+    comment: 'functions'
+    match: '^\..*$'
+  }
+]
