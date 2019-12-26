@@ -29,9 +29,9 @@ patterns: [
             '''
   }
   {
-    name: 'support.class'
+    name: 'entity.name.section'
     comment: 'QASM control instructions'
-    match: '(?x)\\b(include|OPENQASM)\\b'
+    match: '(?x)\\b(include|OPENQASM|version)\\b'
   }
   {
     name: 'variable.language'
@@ -39,14 +39,14 @@ patterns: [
     match: '(?x)\\b(qubit|qubits|map)\\b'
   }
   {
-    name: 'constant.numeric'
+    name: 'constant.other'
     comment: 'index'
-    match: '(?!\\w+\\[)\\d(?=\\])'
+    match: '(?<=(\\w\\[)|(:))( *\\d *)(?=(\\s*\\])|(:))'
   }
   {
-    name: 'constant.numeric'
-    comment: 'number'
-    match: '(?!\\w) *[\\d\\.]+'
+    name: 'keyword.storage.modifier'
+    comment: 'convert function'
+    match: '->'
   }
   {
     name: 'constant.string.single'
@@ -63,8 +63,8 @@ patterns: [
     comment: 'cQASM instructions'
     match: '^ *(?:(qreg|creg)|'+
                   '(prep_x|prep_y|prep_z)|'+
-                  '(depolarizing_channel|load_state)|'+
-                  '(measure|measure_x|measure_y|measure_z|measure_all|measure_parity)|'+
+                  '(error_model)|'+
+                  '(measure_x|measure_y|measure_z|measure_all|measure_parity|measure)|'+
                   '(display|display_binary) )'
   }
   {
@@ -95,5 +95,9 @@ patterns: [
     name: 'keyword.control'
     comment: 'classical gates'
     match: '(?i)^ *(?:(not) )'
+  }
+  {
+    name: 'variable.language'
+    match: '(depolarizing_channel|load_state)'
   }
 ]
