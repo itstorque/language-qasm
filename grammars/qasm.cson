@@ -20,7 +20,7 @@ patterns: [
   {
     name: 'entity.name.function'
     comment: 'function'
-    match: '''^(?x)                                  # At beggining of line
+    match: "^(?x)                                  # At beggining of line
               (\\.)                                  # Valid function name
               (
                 (?: [-a-zA-Z_0-9]|[^\\x00-\\x7F]     # Valid identifier characters
@@ -30,8 +30,7 @@ patterns: [
               (?= $                                  # - End of the line
                 | [\\s,.\\#)\\[:{>+~|]               # - Another selector
                 | #                                  # - A comment
-              )
-            '''
+              )"
   }
   {
     name: 'entity.name.section'
@@ -66,47 +65,47 @@ patterns: [
   {
     name: 'storage.type'
     comment: 'QASM classes'
-    match: '^ *(?:(qreg|creg)|'+
-                '(gate) )'
+    match: '(?x)^\\b(?:(qreg|creg)|
+                       (gate))\\b'
   }
   {
     name: 'storage.modifier'
     comment: 'QASM types'
-    match: '\\b(?:(unmaj|majority)|'+
-                '(post) )\\b'
+    match: '(?x)\\b(?:(unmaj|majority)|
+                      (post))\\b'
   }
   {
     name: 'support.function'
     comment: 'cQASM instructions'
-    match: '(?x)\\b(?:(prep_x|prep_y|prep_z|error_model)|'+
-                  '(measure_x|measure_y|measure_z|measure_all|measure_parity|measure)|'+
-                  '(display|display_binary) )\\b'
+    match: '(?x)\\b(?:(prep_x|prep_y|prep_z|error_model)|
+                      (measure_x|measure_y|measure_z|measure_all|measure_parity|measure)|
+                      (display|display_binary))\\b'
   }
   {
     name: 'keyword.control'
     comment: 'quantum gates'
-    match:   '(?i)(?x)\\b(?:((i|h|x|y|z)|' +
-                        '(rx|ry|rz)|' +
-                        '(x90|y90|z90|rx90|ry90|rz90|mx90|my90|mz90)|' +
-                        '(x180|y180|z180|rx180|ry180|rz180|mx180|my180|mz180)|' +
-                        '(u1|u2|u3)|' +
-                        '(s|sdag|t|tdag)|' +
-                        '(cnot|cx|cz|cr|crk|toffoli|ccx|ccnot)|' +
-                        '(swap)' +
-                        ') )\\b'
+    match:   '(?i)(?x)\\b(?:((i|h|x|y|z)|
+                             (rx|ry|rz)|
+                             (x90|y90|z90|rx90|ry90|rz90|mx90|my90|mz90)|
+                             (x180|y180|z180|rx180|ry180|rz180|mx180|my180|mz180)|
+                             (u1|u2|u3)|
+                             (s|sdag|t|tdag)|
+                             (cnot|cx|cz|cr|crk|toffoli|ccx|ccnot)|
+                             (swap)
+                            ))\\b'
   }
   {
     name: 'keyword.control'
     comment: 'binary modified quantum gates'
-    match:   '(?i)(?x)\\bc-(?:((i|h|x|y|z)|' +
-                          '(rx|ry|rz)|' +
-                          '(x90|y90|z90|rx90|ry90|rz90|mx90|my90|mz90)|' +
-                          '(x180|y180|z180|rx180|ry180|rz180|mx180|my180|mz180)|' +
-                          '(u1|u2|u3)|' +
-                          '(s|sdag|t|tdag)|' +
-                          '(cnot|cx|cz|cr|crk|toffoli|ccx|ccnot)|' +
-                          '(swap)' +
-                          ') )\\b'
+    match:   '(?i)(?x)\\bc-(?:((i|h|x|y|z)|
+                               (rx|ry|rz)|
+                               (x90|y90|z90|rx90|ry90|rz90|mx90|my90|mz90)|
+                               (x180|y180|z180|rx180|ry180|rz180|mx180|my180|mz180)|
+                               (u1|u2|u3)|
+                               (s|sdag|t|tdag)|
+                               (cnot|cx|cz|cr|crk|toffoli|ccx|ccnot)|
+                               (swap)
+                              ))\\b'
   }
   {
     name: 'keyword.control'
