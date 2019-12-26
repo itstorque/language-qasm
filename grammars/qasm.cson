@@ -9,12 +9,48 @@ limitLineLength: true
 patterns: [
   {
     comment: 'Use this to explain your code'
-    name: 'comment'
+    name: 'comment.line.number-sign'
     match: '#.*$'
   }
   {
-    name: 'constant'
-    comment: 'functions'
-    match: '^\..*$'
+    name: 'entity.name.tag'
+    comment: 'function'
+    match: '''^(?x)                                  # At beggining of line
+              (\\.)                                  # Valid function name
+              (
+                (?: [-a-zA-Z_0-9]|[^\\x00-\\x7F]     # Valid identifier characters
+                  | \\\\(?:[0-9a-fA-F]{1,6}|.)       # Escape sequence
+                )+
+              )                                      # Followed by either:
+              (?= $                                  # - End of the line
+                | [\\s,.\\#)\\[:{>+~|]               # - Another selector
+                | #                                  # - A comment
+              )
+            '''
+  }
+  {
+    name: 'keyword.control'
+    comment: 'qubit'
+    match: '(?x)\\b(qubit|qubits|map)\\b'
+  }
+  {
+    name: 'constant.numeric'
+    comment: 'index'
+    match: '(?!\\w+\\[)\\d(?=\\])'
+  }
+  {
+    name: 'constant.numeric'
+    comment: 'number'
+    match: '(?!\\w) *[\\d\\.]+'
+  }
+  {
+    name: 'constant.string.single'
+    comment: 'number'
+    match: '(\'.*\')'
+  }
+  {
+    name: 'constant.string.double'
+    comment: 'number'
+    match: '".*"'
   }
 ]
