@@ -61,35 +61,35 @@ patterns: [
   {
     name: 'support.function'
     comment: 'cQASM instructions'
-    match: '^ *(?:(qreg|creg)|
-                  (prep_x|prep_y|prep_z)|
-                  (depolarizing_channel|load_state)|
-                  (measure|measure_x|measure_y|measure_z|measure_all|measure_parity)|
-                  (display|display_binary) )'
+    match: '^ *(?:(qreg|creg)|'+
+                  '(prep_x|prep_y|prep_z)|'+
+                  '(depolarizing_channel|load_state)|'+
+                  '(measure|measure_x|measure_y|measure_z|measure_all|measure_parity)|'+
+                  '(display|display_binary) )'
   }
   {
     name: 'keyword.control'
     comment: 'quantum gates'
-    match: '(?i)^ *(?:((i|h|x|y|z)|
-                        (rx|ry|rz)|
-                        (x90|y90|z90|rx90|ry90|rz90|mx90|my90|mz90)|
-                        (x180|y180|z180|rx180|ry180|rz180|mx180|my180|mz180)|
-                        (s|sdag|t|tdag)|
-                        (cnot|cx|cz|cr|crk|toffoli|ccx|ccnot)|
-                        (swap)
-                        ) )'
+    match:   '(?i)^ *(?:((i|h|x|y|z)|' +
+                        '(rx|ry|rz)|' +
+                        '(x90|y90|z90|rx90|ry90|rz90|mx90|my90|mz90)|' +
+                        '(x180|y180|z180|rx180|ry180|rz180|mx180|my180|mz180)|' +
+                        '(s|sdag|t|tdag)|' +
+                        '(cnot|cx|cz|cr|crk|toffoli|ccx|ccnot)|' +
+                        '(swap)' +
+                        ') )'
   }
   {
     name: 'keyword.control'
     comment: 'binary modified quantum gates'
-    match: '(?i)^ *c-(?:((i|h|x|y|z)|
-                        (rx|ry|rz)|
-                        (x90|y90|z90|rx90|ry90|rz90|mx90|my90|mz90)|
-                        (x180|y180|z180|rx180|ry180|rz180|mx180|my180|mz180)|
-                        (s|sdag|t|tdag)|
-                        (cnot|cx|cz|cr|crk|toffoli|ccx|ccnot)|
-                        (swap)
-                        ) )'
+    match:   '(?i)^ *c-(?:((i|h|x|y|z)|' +
+                          '(rx|ry|rz)|' +
+                          '(x90|y90|z90|rx90|ry90|rz90|mx90|my90|mz90)|' +
+                          '(x180|y180|z180|rx180|ry180|rz180|mx180|my180|mz180)|' +
+                          '(s|sdag|t|tdag)|' +
+                          '(cnot|cx|cz|cr|crk|toffoli|ccx|ccnot)|' +
+                          '(swap)' +
+                          ') )'
   }
   {
     name: 'keyword.control'
