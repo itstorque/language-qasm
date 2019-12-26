@@ -1,12 +1,18 @@
 {
   "name": "language-qasm",
   "version": "0.0.0",
-  "description": "A short description of your language package",
+  "description": "A QASM syntax highlighter for Atom.",
   "keywords": [
     "language",
-    "grammar"
+    "grammar",
+    "QASM",
+    "Quantum Programming",
+    "syntax",
+    "highlighter",
+    "atom",
+    "language-qasm"
   ],
-  "repository": "https://github.com/atom/language-qasm",
+  "repository": "https://github.com/tareqdandachi/language-qasm",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
