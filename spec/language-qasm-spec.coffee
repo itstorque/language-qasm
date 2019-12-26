@@ -5,11 +5,14 @@ describe "QASM grammar", ->
   grammar = null
 
   beforeEach ->
+    
+    atom.config.set('core.useTreeSitterParsers', false)
+    
     waitsForPromise ->
       atom.packages.activatePackage("language-qasm")
 
     runs ->
-      grammar = atom.syntax.grammarForScopeName("source.qasm")
+      grammar = atom.grammars.grammarForScopeName("source.qasm")
 
   it "parses the grammar", ->
     expect(grammar).toBeTruthy()
