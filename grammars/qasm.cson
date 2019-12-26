@@ -20,7 +20,7 @@ patterns: [
   {
     name: 'entity.name.function'
     comment: 'function'
-    match: "^(?x)                                  # At beggining of line
+    match: '''^(?x)                                  # At beggining of line
               (\\.)                                  # Valid function name
               (
                 (?: [-a-zA-Z_0-9]|[^\\x00-\\x7F]     # Valid identifier characters
@@ -30,7 +30,8 @@ patterns: [
               (?= $                                  # - End of the line
                 | [\\s,.\\#)\\[:{>+~|]               # - Another selector
                 | #                                  # - A comment
-              )"
+              )
+            '''
   }
   {
     name: 'entity.name.section'
