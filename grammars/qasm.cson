@@ -67,7 +67,7 @@ patterns: [
     name: 'storage.type'
     comment: 'QASM classes'
     match: '(?x)^\\b(?:(qreg|creg)|
-                       (gate))\\b'
+                       (gate|opaque))\\b'
   }
   {
     name: 'support.function'
