@@ -70,12 +70,6 @@ patterns: [
                        (gate))\\b'
   }
   {
-    name: 'storage.modifier'
-    comment: 'QASM types'
-    match: '(?x)\\b(?:(unmaj|majority)|
-                      (post))\\b'
-  }
-  {
     name: 'support.function'
     comment: 'cQASM instructions'
     match: '(?x)\\b(?:(prep_x|prep_y|prep_z|error_model)|
